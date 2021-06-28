@@ -10,19 +10,21 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Sidebar />
-      <div className="content">
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/channel">
-            <Channel />
-          </Route>
-          <Route path="/videoPlayer">
-            <VideoPlayer />
-          </Route>
-        </Switch>
+      <div className="container">
+        <Sidebar />
+        <div className="content">
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/channel">
+              <Channel />
+            </Route>
+            <Route path="/videoPlayer">
+              <VideoPlayer />
+            </Route>
+          </Switch>
+        </div>
       </div>
     </div>
   );
