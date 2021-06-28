@@ -1,3 +1,63 @@
 .sidebar {
   flex-basis: 235px;
+  padding: 30px;
+  position: relative;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.tabs {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.tabs li {
+  color: #898989;
+  margin-bottom: 15px;
+}
+.showMore {
+  border: none;
+  outline: none;
+  padding: 2px;
+  color: #898989;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+}
+.tabs a {
+  color: black;
+  text-decoration: none;
+  color: #898989;
+  display: flex;
+  align-items: center;
+}
+.icon {
+  margin-right: 5px;
+}
+.subTitle {
+  margin: 0;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+}
+.subscriptions {
+  margin-bottom: 50px;
+}
+.settingBtn {
+  font-size: 20px;
+  color: #898989;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  cursor: pointer;
+}
+.settingBtn a {
+  text-decoration: none;
+  color: #898989;
 }
