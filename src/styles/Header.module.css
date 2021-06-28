@@ -1,0 +1,16 @@
+.header {
+  height: 84px;
+  padding-left: 30px;
+  padding-right: 70px;
+  display: flex;
+  align-items: center;
+}
+.hamburger {
+  cursor: pointer;
+}
+.hamburger_item {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
