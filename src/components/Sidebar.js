@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/Sidebar.module.css";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import {
   AiOutlineUp,
   AiOutlineDown,
@@ -28,89 +28,91 @@ import user6 from "../images/user6.png";
 function Sidebar() {
   const [showMore, setShowMore] = useState(false);
   return (
-    <div className={styles.sidebar}>
-      <ul className={styles.tabs}>
-        <li>
-          <Link>
-            {" "}
-            <AiOutlineHome className={styles.icon} /> Home
-          </Link>
-        </li>
-        <li>
-          <Link>
-            {" "}
-            <AiOutlineFire className={styles.icon} />
-            Trending
-          </Link>
-        </li>
-        <li>
-          <Link>
-            <AiOutlineBook className={styles.icon} />
-            Subscriptions
-          </Link>
-        </li>
-        <li>
-          <Link>
-            <AiOutlineFolder className={styles.icon} />
-            Library
-          </Link>
-        </li>
-        <li>
-          <Link>
-            <AiOutlineHistory className={styles.icon} />
-            History
-          </Link>
-        </li>
-        <li>
-          <Link>
-            <AiOutlineFieldTime className={styles.icon} />
-            Watch later
-          </Link>
-        </li>
-        <li>
-          <Link>
-            <AiOutlineStar className={styles.icon} />
-            Favorites
-          </Link>
-        </li>
-        <li>
-          <Link>
-            <AiOutlineHeart className={styles.icon} />
-            Liked videos
-          </Link>
-        </li>
-        <li>
-          <Link>
-            <AiOutlineCustomerService className={styles.icon} />
-            Music
-          </Link>
-        </li>
-        <li>
-          <Link>
-            {" "}
-            <AiOutlineLaptop className={styles.icon} />
-            Games
-          </Link>
-        </li>
-        {showMore && (
+    <div className={styles.sidebar} id="sidebar">
+      <nav>
+        <ul className={styles.tabs}>
           <li>
-            {" "}
-            <AiOutlineMeh className={styles.icon} />
-            Nothing more to show
+            <NavLink to="/" exact activeClassName={styles.activeLink}>
+              {" "}
+              <AiOutlineHome className={styles.icon} /> Home
+            </NavLink>
           </li>
-        )}
-        <button
-          className={styles.showMore}
-          onClick={() => setShowMore(!showMore)}
-        >
-          {showMore ? (
-            <AiOutlineUp className={styles.icon} />
-          ) : (
-            <AiOutlineDown className={styles.icon} />
-          )}{" "}
-          Show {showMore ? "less" : "more"}
-        </button>
-      </ul>
+          <li>
+            <NavLink to="/trending" activeClassName={styles.activeLink}>
+              {" "}
+              <AiOutlineFire className={styles.icon} />
+              Trending
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/subscriptions" activeClassName={styles.activeLink}>
+              <AiOutlineBook className={styles.icon} />
+              Subscriptions
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/library" activeClassName={styles.activeLink}>
+              <AiOutlineFolder className={styles.icon} />
+              Library
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/history" activeClassName={styles.activeLink}>
+              <AiOutlineHistory className={styles.icon} />
+              History
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/watchLater" activeClassName={styles.activeLink}>
+              <AiOutlineFieldTime className={styles.icon} />
+              Watch later
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/favourites" activeClassName={styles.activeLink}>
+              <AiOutlineStar className={styles.icon} />
+              Favorites
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/liked" activeClassName={styles.activeLink}>
+              <AiOutlineHeart className={styles.icon} />
+              Liked videos
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/music" activeClassName={styles.activeLink}>
+              <AiOutlineCustomerService className={styles.icon} />
+              Music
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/games" activeClassName={styles.activeLink}>
+              {" "}
+              <AiOutlineLaptop className={styles.icon} />
+              Games
+            </NavLink>
+          </li>
+          {showMore && (
+            <li>
+              {" "}
+              <AiOutlineMeh className={styles.icon} />
+              Nothing more to show
+            </li>
+          )}
+          <button
+            className={styles.showMore}
+            onClick={() => setShowMore(!showMore)}
+          >
+            {showMore ? (
+              <AiOutlineUp className={styles.icon} />
+            ) : (
+              <AiOutlineDown className={styles.icon} />
+            )}{" "}
+            Show {showMore ? "less" : "more"}
+          </button>
+        </ul>
+      </nav>
       <p className={styles.subTitle}>Subscriptions</p>
       <ul className={styles.subscriptions}>
         <li>
@@ -135,7 +137,7 @@ function Sidebar() {
       <div className={styles.settingBtn}>
         {" "}
         <AiOutlineSetting className={styles.icon} />
-        <Link>Setting</Link>
+        <Link to="/setting">Setting</Link>
       </div>
     </div>
   );

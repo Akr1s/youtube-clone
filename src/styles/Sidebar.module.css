@@ -2,6 +2,7 @@
   flex-basis: 235px;
   padding: 30px;
   position: relative;
+  transition: all 0.1s;
 }
 ul {
   list-style-type: none;
@@ -60,4 +61,14 @@ ul {
 .settingBtn a {
   text-decoration: none;
   color: #898989;
+}
+a.activeLink {
+  color: red;
+  font-weight: 700;
+}
+
+.activeSidebar {
+  flex-basis: 0;
+  overflow: hidden;
+  padding: 30px 0px;
 }
