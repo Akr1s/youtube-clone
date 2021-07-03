@@ -4,6 +4,7 @@ import PageVideo from "../../components/PageVideo";
 import { transformData } from "../../utils";
 import { useDispatch } from "react-redux";
 import { addVideos } from "../../redux/actions";
+import HomeVideoSceleton from "../../components/Sceletons/HomeVideoSceleton";
 
 function Home() {
   const [videos, setVideos] = useState([]);
@@ -11,6 +12,7 @@ function Home() {
   const [loadingError, setLoadingError] = useState(false);
   const url = "http://api.tvmaze.com/schedule/full";
   const dispatch = useDispatch();
+  const VIDEOS_PER_PAGE = 20;
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -30,7 +32,12 @@ function Home() {
     fetchVideos();
   }, [dispatch]);
 
-  if (loading) return <div className={styles.home}>Loading...</div>;
+  if (loading)
+    return (
+      <div className={styles.home}>
+        {new Array(20).fill(<HomeVideoSceleton />)}
+      </div>
+    );
   if (loadingError)
     return (
       <div className={styles.home}>
