@@ -58,13 +58,13 @@
   }
 }
 @media screen and (max-width: 1000px) {
+  .header {
+    border-bottom: 1px solid #afafaf;
+  }
   .logo {
     margin-right: 30px;
   }
   .icon:not(:last-child) {
-    display: none;
-  }
-  .hamburger {
     display: none;
   }
 }

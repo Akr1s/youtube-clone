@@ -69,13 +69,13 @@ function Sidebar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/favourites" activeClassName={styles.activeLink}>
+            <NavLink to="/favorites" activeClassName={styles.activeLink}>
               <AiOutlineStar className={styles.icon} />
               Favorites
             </NavLink>
           </li>
           <li>
-            <NavLink to="/liked" activeClassName={styles.activeLink}>
+            <NavLink to="/likedVideos" activeClassName={styles.activeLink}>
               <AiOutlineHeart className={styles.icon} />
               Liked videos
             </NavLink>
