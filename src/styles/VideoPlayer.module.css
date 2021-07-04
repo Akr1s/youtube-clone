@@ -1,0 +1,10 @@
+.videoPlayer {
+  display: flex;
+}
+.left {
+  flex: 1;
+  padding-right: 30px;
+}
+.right {
+  flex-basis: 450px;
+}

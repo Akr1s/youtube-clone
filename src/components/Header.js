@@ -5,7 +5,7 @@ import logo from "../images/logo-black.png";
 import { Link } from "react-router-dom";
 import {
   AiOutlineBell,
-  AiOutlineMenu,
+  AiOutlineAppstore,
   AiOutlineVideoCamera,
   AiOutlineUser,
   AiOutlineSearch,
@@ -39,7 +39,7 @@ function Header() {
       </div>
       <div className={styles.header_right}>
         <AiOutlineVideoCamera className={styles.icon} />
-        <AiOutlineMenu className={styles.icon} />
+        <AiOutlineAppstore className={styles.icon} />
         <AiOutlineBell className={styles.icon} />
         <AiOutlineUser className={styles.icon} />
       </div>

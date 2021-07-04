@@ -35,7 +35,7 @@ function Home() {
   if (loading)
     return (
       <div className={styles.home}>
-        {new Array(20).fill(<HomeVideoSceleton />)}
+        {new Array(VIDEOS_PER_PAGE).fill(<HomeVideoSceleton />)}
       </div>
     );
   if (loadingError)

@@ -11,3 +11,8 @@ export function transformData(data) {
 export function camelCase(string) {
   return string[0].toUpperCase() + string.slice(1);
 }
+
+export function formatArrayLength(array) {
+  if (array.length > 10) array.length = 10;
+  return array;
+}

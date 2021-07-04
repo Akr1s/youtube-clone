@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Channel from "./pages/Channel";
 import VideoPlayer from "./pages/VideoPlayer";
-import Error404 from "./components/Error404";
+import Error404 from "./components/ErrorHandlers/Error404";
 import Wraper from "./components/Wraper";
 import Favorites from "./pages/Favorites";
 import Trending from "./pages/Trending";

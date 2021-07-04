@@ -1,0 +1,30 @@
+.title {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.additionalInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rating {
+  margin: 0;
+}
+.btn {
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+.btn + .btn {
+  margin-left: 10px;
+}
+.threeDots {
+  margin-left: 30px;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+.btn,
+.threeDots {
+  background-color: #eee;
+  border: none;
+  font-size: 18px;
+}
