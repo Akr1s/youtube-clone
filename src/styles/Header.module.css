@@ -28,23 +28,7 @@
 .logo {
   margin-right: 60px;
 }
-.search_form {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-}
-.search_input {
-  width: 100%;
-  font-size: 20px;
-  padding: 12px 23px;
-  border: 3px solid #ebebeb;
-  border-radius: 30px;
-}
-.seach_icon {
-  margin-left: -40px;
-  font-size: 19px;
-  cursor: pointer;
-}
+
 .icon {
   font-size: 40px;
   color: #a69b9b;
@@ -71,15 +55,5 @@
 @media screen and (max-width: 600px) {
   .header_left {
     justify-content: space-between;
-  }
-  .search_input {
-    display: none;
-  }
-  .seach_icon {
-    margin-left: 0;
-    font-size: 40px;
-  }
-  .search_form {
-    flex-grow: 0;
   }
 }

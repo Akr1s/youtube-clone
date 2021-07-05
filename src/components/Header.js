@@ -11,8 +11,8 @@ import {
   AiOutlineAppstore,
   AiOutlineVideoCamera,
   AiOutlineUser,
-  AiOutlineSearch,
 } from "react-icons/ai";
+import SearchForm from "./SearchForm";
 
 function Header() {
   const isVideoPlayer = useRouteMatch("/videoPlayer/:id");
@@ -34,14 +34,7 @@ function Header() {
         <Link to="/">
           <img src={logo} alt="Page" className={styles.logo} />
         </Link>
-        <form className={styles.search_form}>
-          <input
-            type="text"
-            className={styles.search_input}
-            placeholder="Search..."
-          />
-          <AiOutlineSearch className={styles.seach_icon} />
-        </form>
+        <SearchForm />
       </div>
       <div className={styles.header_right}>
         <AiOutlineVideoCamera className={styles.icon} />
