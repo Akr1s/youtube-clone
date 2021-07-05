@@ -18,7 +18,7 @@ ul {
   color: #898989;
   margin-bottom: 15px;
 }
-.showMore {
+.showMoreBtn {
   border: none;
   outline: none;
   padding: 2px;
@@ -30,6 +30,12 @@ ul {
   display: flex;
   align-items: center;
 }
+
+li.showMoreLi {
+  color: #a21009;
+  font-weight: 600;
+}
+
 .tabs a {
   color: black;
   text-decoration: none;

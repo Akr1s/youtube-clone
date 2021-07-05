@@ -15,8 +15,8 @@ export function transformData(data) {
   });
 }
 
-export function camelCase(string) {
-  return string[0].toUpperCase() + string.slice(1);
+export function camelCase(title = "NoTitle") {
+  return title[0].toUpperCase() + title.slice(1);
 }
 
 export function formatArrayLength(array) {
