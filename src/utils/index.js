@@ -19,7 +19,7 @@ export function camelCase(title = "NoTitle") {
   return title[0].toUpperCase() + title.slice(1);
 }
 
-export function formatArrayLength(array) {
+export function formatArrayLength(array = []) {
   if (array.length > 10) array.length = 10;
   return array;
 }

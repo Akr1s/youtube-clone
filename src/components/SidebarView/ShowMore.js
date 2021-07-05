@@ -10,7 +10,7 @@ function ShowMore() {
         <li className={showMoreLi}>
           {" "}
           <AiOutlineMeh className={icon} />
-          Nothing more to show
+          Nothing more
         </li>
       )}
       <button className={showMoreBtn} onClick={() => setShowMore(!showMore)}>
