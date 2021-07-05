@@ -28,3 +28,14 @@
   border: none;
   font-size: 18px;
 }
+@media screen and (max-width: 500px) {
+  .additionalInfo {
+    flex-direction: column;
+  }
+  .rating {
+    margin-bottom: 10px;
+  }
+  .threeDots {
+    margin-left: 10px;
+  }
+}

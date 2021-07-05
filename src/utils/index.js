@@ -1,11 +1,18 @@
 export function transformData(data) {
-  return data.map((item) => ({
-    id: item.id,
-    name: item["_embedded"].show.name,
-    showId: item["_embedded"].show.id,
-    image: item["_embedded"].show.image.medium,
-    episode: item.name,
-  }));
+  return data.map((item) => {
+    let pic;
+    if (!item["_embedded"].show.image) pic = "https://picsum.photos/200";
+    else pic = item["_embedded"].show.image.medium;
+    return {
+      id: item.id,
+      name: item["_embedded"].show.name,
+      showId: item["_embedded"].show.id,
+      image: pic,
+      episode: item.name,
+      summary: item["_embedded"].show.summary,
+      date: item["_embedded"].show.premiered,
+    };
+  });
 }
 
 export function camelCase(string) {

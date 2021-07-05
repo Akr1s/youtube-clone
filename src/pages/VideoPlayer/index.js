@@ -5,6 +5,7 @@ import styles from "../../styles/VideoPlayer.module.css";
 import { formatArrayLength } from "../../utils";
 import Video from "../../components/VideoPlayerView/Video";
 import VideoInfo from "../../components/VideoPlayerView/VideoInfo";
+import PageVideo from "../../components/PageVideo";
 
 function VideoPlayer() {
   const params = useParams();
@@ -43,9 +44,27 @@ function VideoPlayer() {
     <div className={styles.videoPlayer}>
       <div className={styles.left}>
         <Video poster={video.image} title={video.name} />
-        <VideoInfo episode={video.episode} title={video.name} />
+        <VideoInfo
+          episode={video.episode}
+          title={video.name}
+          summary={video.summary}
+          date={video.date}
+        />
       </div>
-      <div className={styles.right}></div>
+      <div className={styles.right}>
+        <div className={styles.rightTitle}>Enother episodes</div>
+        <div className={styles.rightContent}>
+          {episodesList.map((episode) => (
+            <PageVideo
+              key={episode.id}
+              name={episode.name}
+              image={video.image}
+              episode={episode.episode}
+              id={episode.id}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

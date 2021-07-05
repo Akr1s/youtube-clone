@@ -35,6 +35,7 @@ function Home() {
   if (loading)
     return (
       <div className={styles.home}>
+        {/* Key problem below */}
         {new Array(VIDEOS_PER_PAGE).fill(<HomeVideoSceleton />)}
       </div>
     );
