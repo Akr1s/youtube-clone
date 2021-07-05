@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/Sidebar.module.css";
-import { NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, Link, useRouteMatch } from "react-router-dom";
 import {
   AiOutlineUp,
   AiOutlineDown,
@@ -27,8 +27,7 @@ import user6 from "../images/user6.png";
 
 function Sidebar() {
   const [showMore, setShowMore] = useState(false);
-  const { pathname } = useLocation();
-  const isVideoPlayer = pathname.includes("videoPlayer");
+  const isVideoPlayer = useRouteMatch("/videoPlayer/:id");
   return (
     <div
       className={`${styles.sidebar} ${isVideoPlayer && styles.sidebarAbsolute}`}

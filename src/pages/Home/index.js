@@ -20,7 +20,9 @@ function Home() {
         setLoadingError(false);
         const response = await fetch(url);
         const allVideos = await response.json();
-        const transformedData = transformData(allVideos.slice(0, 20));
+        const transformedData = transformData(
+          allVideos.slice(0, VIDEOS_PER_PAGE)
+        );
         setVideos(transformedData);
         dispatch(addVideos(transformedData));
         setLoading(false);
@@ -35,8 +37,9 @@ function Home() {
   if (loading)
     return (
       <div className={styles.home}>
-        {/* Key problem below */}
-        {new Array(VIDEOS_PER_PAGE).fill(<HomeVideoSceleton />)}
+        {new Array(VIDEOS_PER_PAGE).fill(1).map((item, index) => (
+          <HomeVideoSceleton key={index} />
+        ))}
       </div>
     );
   if (loadingError)

@@ -5,7 +5,7 @@ import {
   sidebarActiveAbsolute,
 } from "../styles/Sidebar.module.css";
 import logo from "../images/logo-black.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 import {
   AiOutlineBell,
   AiOutlineAppstore,
@@ -15,8 +15,7 @@ import {
 } from "react-icons/ai";
 
 function Header() {
-  const { pathname } = useLocation();
-  const isVideoPlayer = pathname.includes("videoPlayer");
+  const isVideoPlayer = useRouteMatch("/videoPlayer/:id");
 
   const handleMenuOpen = () => {
     const element = document.getElementById("sidebar");
