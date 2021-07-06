@@ -9,7 +9,7 @@ function Sidebar() {
   const isVideoPlayer = useRouteMatch("/videoPlayer/:id");
 
   return (
-    <div
+    <aside
       className={`${styles.sidebar} ${isVideoPlayer && styles.sidebarAbsolute}`}
       id="sidebar"
     >
@@ -22,7 +22,7 @@ function Sidebar() {
         <AiOutlineSetting className={styles.icon} />
         <Link to="/setting">Setting</Link>
       </div>
-    </div>
+    </aside>
   );
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import SingleResult from "../../components/SingleResult";
+import SingleResult from "../../components/Search/SingleResult";
 import styles from "../../styles/SearchResults.module.css";
 
 function SearchResults() {

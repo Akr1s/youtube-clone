@@ -7,3 +7,10 @@
   margin: 0;
   margin-top: 5px;
 }
+.poster {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  background-color: #444;
+  border-radius: 3px;
+}

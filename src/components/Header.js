@@ -12,7 +12,7 @@ import {
   AiOutlineVideoCamera,
   AiOutlineUser,
 } from "react-icons/ai";
-import SearchForm from "./SearchForm";
+import SearchForm from "./Search/SearchForm";
 
 function Header() {
   const isVideoPlayer = useRouteMatch("/videoPlayer/:id");
@@ -24,7 +24,7 @@ function Header() {
   };
 
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <div className={styles.header_left}>
         <div className={styles.hamburger} onClick={handleMenuOpen}>
           <div className={styles.hamburger_item}></div>
@@ -42,7 +42,7 @@ function Header() {
         <AiOutlineBell className={styles.icon} />
         <AiOutlineUser className={styles.icon} />
       </div>
-    </div>
+    </header>
   );
 }
 

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import styles from "../styles/SearchForm.module.css";
+import styles from "../../styles/SearchForm.module.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { setSearchTerm } from "../redux/actions";
+import { setSearchTerm } from "../../redux/actions";
 import { useHistory } from "react-router-dom";
 
 function SearchForm() {
