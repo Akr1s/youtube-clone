@@ -10,7 +10,7 @@ function Home() {
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
-  const url = "http://api.tvmaze.com/schedule/full";
+  const url = "https://api.tvmaze.com/schedule/full";
   const dispatch = useDispatch();
   const VIDEOS_PER_PAGE = 20;
 

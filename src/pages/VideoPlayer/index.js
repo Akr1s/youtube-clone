@@ -12,7 +12,7 @@ function VideoPlayer() {
   const id = +params.id.slice(1);
   const videos = useSelector((state) => state.videos);
   const video = videos.find((item) => item.id === id);
-  const url = `http://api.tvmaze.com/shows/${video.showId}/episodes`;
+  const url = `https://api.tvmaze.com/shows/${video.showId}/episodes`;
   const [loading, setLoading] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
   const [episodesList, setEpisodesList] = useState([]);

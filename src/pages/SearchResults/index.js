@@ -9,7 +9,7 @@ function SearchResults() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
-  const url = "http://api.tvmaze.com/search/shows?q=";
+  const url = "https://api.tvmaze.com/search/shows?q=";
 
   useEffect(() => {
     const fetchResults = async () => {
