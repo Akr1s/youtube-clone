@@ -1,46 +1,26 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import SingleResult from "../../components/Search/SingleResult";
+import useFetch from "../../hooks/useFetch";
 import styles from "../../styles/SearchResults.module.css";
 
 function SearchResults() {
   const term = useSelector((state) => state.term);
-  const [results, setResults] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [loadingError, setLoadingError] = useState(false);
   const url = "https://api.tvmaze.com/search/shows?q=";
 
-  useEffect(() => {
-    const fetchResults = async () => {
-      try {
-        setLoadingError(false);
-        const response = await fetch(url + term);
-        const results = await response.json();
-        setResults(results);
-        setLoading(false);
-      } catch (error) {
-        setLoading(false);
-        setLoadingError(true);
-      }
-    };
-    fetchResults();
-  }, [term]);
-  if (loading) return <div>Loading...</div>;
-  if (loadingError)
-    return <div>There is an error, try to refresh the page</div>;
-  if (results.length === 0) return <div>Sorry, we cant fing anything</div>;
+  const { result, error } = useFetch(url + term);
+  if (error) return <div>There is an error, try to refresh the page</div>;
+  if (!result) return <div>Loading...</div>;
+  if (result.length === 0) return <div>Sorry, we cant fing anything</div>;
   return (
     <div>
-      <h2 className={styles.searchCounter}>Search results: {results.length}</h2>
+      <h2 className={styles.searchCounter}>Search results: {result.length}</h2>
       <div className={styles.results}>
-        {results.map((result) => {
+        {result.map((item) => {
           const image =
-            result.show.image?.medium || "https://picsum.photos/210/295";
-          const name = result.show.name;
-          return (
-            <SingleResult image={image} name={name} key={result.show.id} />
-          );
+            item.show.image?.medium || "https://picsum.photos/210/295";
+          const name = item.show.name;
+          return <SingleResult image={image} name={name} key={item.show.id} />;
         })}
       </div>
     </div>

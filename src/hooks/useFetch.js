@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useFetch(url) {
+const useFetch = (url) => {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
@@ -16,7 +16,9 @@ export default function useFetch(url) {
     };
 
     fetchData();
-  }, []);
+  }, [url]);
 
   return { result, error };
-}
+};
+
+export default useFetch;
