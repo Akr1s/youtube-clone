@@ -8,6 +8,7 @@ import HomeVideoSceleton from "../../components/Sceletons/HomeVideoSceleton";
 import useFetch from "../../hooks/useFetch";
 import Pagination from "../../components/HomePagination";
 import useToTop from "../../hooks/useToTop";
+import PaginationSceleton from "../../components/Sceletons/PaginationSceleton";
 
 function Home() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -34,11 +35,14 @@ function Home() {
     );
   if (!result) {
     return (
-      <div className={styles.home}>
-        {new Array(VIDEOS_PER_PAGE).fill(1).map((item, index) => (
-          <HomeVideoSceleton key={index} />
-        ))}
-      </div>
+      <>
+        <PaginationSceleton />
+        <div className={styles.home}>
+          {new Array(VIDEOS_PER_PAGE).fill(1).map((item, index) => (
+            <HomeVideoSceleton key={index} />
+          ))}
+        </div>
+      </>
     );
   }
 
