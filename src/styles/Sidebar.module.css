@@ -4,6 +4,7 @@
   padding-right: 0px;
   position: relative;
   transition: all 0.1s;
+  z-index: 100;
 }
 ul {
   list-style-type: none;
