@@ -7,6 +7,7 @@ import Video from "../../components/VideoPlayerView/Video";
 import VideoInfo from "../../components/VideoPlayerView/VideoInfo";
 import Episode from "../../components/VideoPlayerView/Episode";
 import useFetch from "../../hooks/useFetch";
+import useToTop from "../../hooks/useToTop";
 
 function VideoPlayer() {
   const params = useParams();
@@ -14,6 +15,7 @@ function VideoPlayer() {
   const videos = useSelector((state) => state.videos);
   const video = videos.find((item) => item.id === id);
   const url = `https://api.tvmaze.com/shows/${video.showId}/episodes`;
+  useToTop();
 
   const { result, error } = useFetch(url);
 

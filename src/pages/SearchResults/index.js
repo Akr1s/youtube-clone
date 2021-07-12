@@ -2,11 +2,13 @@ import React from "react";
 import { useSelector } from "react-redux";
 import SingleResult from "../../components/Search/SingleResult";
 import useFetch from "../../hooks/useFetch";
+import useToTop from "../../hooks/useToTop";
 import styles from "../../styles/SearchResults.module.css";
 
 function SearchResults() {
   const term = useSelector((state) => state.term);
   const url = "https://api.tvmaze.com/search/shows?q=";
+  useToTop();
 
   const { result, error } = useFetch(url + term);
   if (error) return <div>There is an error, try to refresh the page</div>;

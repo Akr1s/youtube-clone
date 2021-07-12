@@ -7,12 +7,15 @@ import { addVideos } from "../../redux/actions";
 import HomeVideoSceleton from "../../components/Sceletons/HomeVideoSceleton";
 import useFetch from "../../hooks/useFetch";
 import Pagination from "../../components/HomePagination";
+import useToTop from "../../hooks/useToTop";
 
 function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const url = "https://api.tvmaze.com/schedule/full";
   const dispatch = useDispatch();
   const VIDEOS_PER_PAGE = 20;
+
+  useToTop();
 
   const { result, error } = useFetch(url);
 
