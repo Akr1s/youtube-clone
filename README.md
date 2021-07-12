@@ -8,8 +8,8 @@
 
 ## TODO
 
+    * mobile adaptivity for pagination
     * Add sceletons to search SingleResult
-    * try to create useFetch hook
     * add more top search terms to datalist
     * add mobile search
     * add themes and more relative units
