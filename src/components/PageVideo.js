@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function PageVideo({ name, image, episode, id }) {
   return (
-    <div className={styles.pageVideo}>
+    <article className={styles.pageVideo}>
       <Link
         to={`/videoPlayer/:${id}`}
         style={{ textDecoration: "none" }}
@@ -16,7 +16,7 @@ function PageVideo({ name, image, episode, id }) {
           <p className={styles.episode}>{episode}</p>
         </div>
       </Link>
-    </div>
+    </article>
   );
 }
 
