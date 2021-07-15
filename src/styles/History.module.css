@@ -1,0 +1,37 @@
+.history h2 {
+  text-align: center;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.historyElement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.poster {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  background: #444;
+  border-radius: 3px;
+}
+.description {
+  width: 100%;
+}
+.videoTitle,
+.episode {
+  margin: 0;
+  color: black;
+}
+.cleatBtn {
+  border: 0;
+  padding: 10px;
+  background-color: rgb(193, 13, 13);
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+  color: #fff;
+  cursor: pointer;
+}

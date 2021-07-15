@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import styles from "../../styles/VideoPlayer.module.css";
 import { formatArrayLength } from "../../utils";
@@ -7,13 +7,20 @@ import Video from "../../components/VideoPlayerView/Video";
 import VideoInfo from "../../components/VideoPlayerView/VideoInfo";
 import Episode from "../../components/VideoPlayerView/Episode";
 import useFetch from "../../hooks/useFetch";
+import { pushToHistory } from "../../redux/actions";
+import { useEffect } from "react";
 
 function VideoPlayer() {
   const params = useParams();
   const id = +params.id.slice(1);
   const videos = useSelector((state) => state.videos);
   const video = videos.find((item) => item.id === id);
+  const dispatch = useDispatch();
   const url = `https://api.tvmaze.com/shows/${video.showId}/episodes`;
+
+  useEffect(() => {
+    dispatch(pushToHistory(video));
+  }, [video, dispatch]);
 
   const { result, error } = useFetch(url);
 
