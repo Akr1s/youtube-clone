@@ -5,7 +5,7 @@ import {
   sidebarActiveAbsolute,
 } from "../styles/Sidebar.module.css";
 import logo from "../images/logo-black.png";
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link, useLocation, useRouteMatch } from "react-router-dom";
 import {
   AiOutlineBell,
   AiOutlineAppstore,
@@ -13,15 +13,24 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import SearchForm from "./Search/SearchForm";
+import { useEffect } from "react";
 
 function Header() {
   const isVideoPlayer = useRouteMatch("/videoPlayer/:id");
+
+  const { pathname } = useLocation();
 
   const handleMenuOpen = () => {
     const element = document.getElementById("sidebar");
     if (isVideoPlayer) element.classList.toggle(sidebarActiveAbsolute);
     else element.classList.toggle(activeSidebar);
   };
+
+  useEffect(() => {
+    const element = document.getElementById("sidebar");
+    if (!element.classList.contains(sidebarActiveAbsolute))
+      element.classList.remove(sidebarActiveAbsolute);
+  }, [pathname]);
 
   return (
     <header className={styles.header}>
