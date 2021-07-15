@@ -23,7 +23,8 @@ const useVideos = (VIDEOS_PER_PAGE, currentPage, url) => {
     const lastPageIndex = firstPageIndex + VIDEOS_PER_PAGE;
     return videos.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, videos, VIDEOS_PER_PAGE]);
-  return { transformedData, error, result };
+
+  return { transformedData, error };
 };
 
 export default useVideos;

@@ -13,7 +13,7 @@ function Home() {
   const VIDEOS_PER_PAGE = 20;
   const { length: videosLenght } = useSelector((state) => state.videos);
 
-  const { transformedData, error, result } = useVideos(
+  const { transformedData, error } = useVideos(
     VIDEOS_PER_PAGE,
     currentPage,
     url
@@ -25,7 +25,7 @@ function Home() {
         There is an error, try to refresh the page
       </div>
     );
-  if (!result) {
+  if (transformedData.length === 0) {
     return (
       <>
         <PaginationSceleton />
