@@ -6,11 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./redux";
 import { BrowserRouter } from "react-router-dom";
+import ToTop from "./components/ToTop";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
+        <ToTop />
         <App />
       </Provider>
     </BrowserRouter>
