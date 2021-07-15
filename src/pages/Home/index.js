@@ -1,28 +1,23 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Home.module.css";
 import PageVideo from "../../components/PageVideo";
-import { transformData } from "../../utils";
-import { useDispatch } from "react-redux";
-import { addVideos } from "../../redux/actions";
 import HomeVideoSceleton from "../../components/Sceletons/HomeVideoSceleton";
-import useFetch from "../../hooks/useFetch";
 import Pagination from "../../components/HomePagination";
 import PaginationSceleton from "../../components/Sceletons/PaginationSceleton";
+import useVideos from "../../hooks/useVideos";
+import { useSelector } from "react-redux";
 
 function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const url = "https://api.tvmaze.com/schedule/full";
-  const dispatch = useDispatch();
   const VIDEOS_PER_PAGE = 20;
+  const { length: videosLenght } = useSelector((state) => state.videos);
 
-  const { result, error } = useFetch(url);
-
-  const transformedData = useMemo(() => {
-    if (!result) return;
-    const firstPageIndex = (currentPage - 1) * VIDEOS_PER_PAGE;
-    const lastPageIndex = firstPageIndex + VIDEOS_PER_PAGE;
-    return transformData(result.slice(firstPageIndex, lastPageIndex));
-  }, [currentPage, result]);
+  const { transformedData, error, result } = useVideos(
+    VIDEOS_PER_PAGE,
+    currentPage,
+    url
+  );
 
   if (error)
     return (
@@ -43,14 +38,11 @@ function Home() {
     );
   }
 
-  //needs attention
-  dispatch(addVideos(transformedData));
-
   return (
     <>
       <Pagination
         currentPage={currentPage}
-        totalCount={result.length}
+        totalCount={videosLenght}
         pageSize={VIDEOS_PER_PAGE}
         onPageChange={(page) => setCurrentPage(page)}
       />

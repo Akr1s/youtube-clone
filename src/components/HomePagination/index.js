@@ -7,7 +7,7 @@ const Pagination = (props) => {
   const {
     onPageChange,
     totalCount,
-    siblingCount = 2,
+    siblingCount = 1,
     currentPage,
     pageSize,
   } = props;
