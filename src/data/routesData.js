@@ -14,7 +14,7 @@ import SearchResults from "../pages/SearchResults";
 
 const routesData = [
   { path: "/", exact: true, component: <Home /> },
-  { path: "/channel", exact: false, component: <Channel /> },
+  { path: "/channel:id", exact: false, component: <Channel /> },
   { path: "/videoPlayer/:id", exact: false, component: <VideoPlayer /> },
   { path: "/trending", exact: false, component: <Trending /> },
   { path: "/subscriptions", exact: false, component: <Subscriptions /> },

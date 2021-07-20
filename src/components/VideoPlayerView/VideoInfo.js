@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "../../styles/VideoInfo.module.css";
+import LinkToChannel from "../LinkToChannel";
 
-function VideoInfo({ episode, title, summary, date }) {
+function VideoInfo({ episode, title, summary, date, showId }) {
   const summaryText = summary ? summary : "There is nothing to show";
   return (
     <div className={styles.videoInfo}>
@@ -16,6 +17,7 @@ function VideoInfo({ episode, title, summary, date }) {
         </div>
       </div>
       <div className={styles.mainInfo}>
+        <LinkToChannel channel={showId} linkClass={styles.linkToChannel} />
         <h3>{title}</h3>
         <p className={styles.premiered}>{date}</p>
         <p

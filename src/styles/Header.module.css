@@ -55,5 +55,9 @@
 @media screen and (max-width: 600px) {
   .header_left {
     justify-content: space-between;
+    margin-right: 20px;
+  }
+  .icon {
+    font-size: 30px;
   }
 }

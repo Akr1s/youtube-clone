@@ -40,6 +40,7 @@ function VideoPlayer() {
           title={video.name}
           summary={video.summary}
           date={video.date}
+          showId={video.showId}
         />
       </div>
       <div className={styles.right}>
