@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../../styles/SearchForm.module.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { setSearchTerm } from "../../redux/actions";
+import { setTerm } from "../../features/term/termSlice";
 import { useHistory } from "react-router-dom";
 
 function SearchForm() {
@@ -12,7 +12,7 @@ function SearchForm() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    dispatch(setSearchTerm(searhValue));
+    dispatch(setTerm(searhValue));
     history.push("/searchResult");
   };
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { resetHistory } from "../../redux/actions";
+import { reset } from "../../features/history/historySlice";
 import styles from "../../styles/History.module.css";
 
 function History() {
@@ -8,7 +8,7 @@ function History() {
   const dispatch = useDispatch();
 
   const handleClear = () => {
-    dispatch(resetHistory());
+    dispatch(reset());
   };
 
   if (history.length === 0)

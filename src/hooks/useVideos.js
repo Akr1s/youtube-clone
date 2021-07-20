@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addVideos } from "../redux/actions";
+import { add } from "../features/video/videosSlice";
 import { transformData } from "../utils";
 import useFetch from "./useFetch";
 
@@ -14,7 +14,7 @@ const useVideos = (VIDEOS_PER_PAGE, currentPage, url) => {
     if (!result) return;
     const slicedResult = result.slice(0, 300);
     const transformedResult = transformData(slicedResult);
-    dispatch(addVideos(transformedResult));
+    dispatch(add(transformedResult));
   }, [result, dispatch]);
 
   const transformedData = useMemo(() => {

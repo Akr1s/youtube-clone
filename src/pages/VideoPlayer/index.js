@@ -7,7 +7,7 @@ import Video from "../../components/VideoPlayerView/Video";
 import VideoInfo from "../../components/VideoPlayerView/VideoInfo";
 import Episode from "../../components/VideoPlayerView/Episode";
 import useFetch from "../../hooks/useFetch";
-import { pushToHistory } from "../../redux/actions";
+import { push } from "../../features/history/historySlice";
 import { useEffect } from "react";
 import useVideoWithParams from "../../hooks/useVideoWithParams";
 
@@ -18,7 +18,7 @@ function VideoPlayer() {
   const url = `https://api.tvmaze.com/shows/${video.showId}/episodes`;
 
   useEffect(() => {
-    dispatch(pushToHistory(video));
+    dispatch(push(video));
   }, [video, dispatch]);
 
   const { result, error } = useFetch(url);
