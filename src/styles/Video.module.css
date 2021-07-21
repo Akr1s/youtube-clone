@@ -14,3 +14,15 @@
   transform: translate(-50%, -50%);
   width: 20%;
 }
+@media screen and (max-width: 900px) {
+  .video {
+    height: 50vh;
+  }
+}
+@media screen and (max-width: 500px) {
+  .video {
+    width: 80%;
+    margin: 0 auto;
+    height: 30vh;
+  }
+}
