@@ -61,3 +61,8 @@
     font-size: 30px;
   }
 }
+@media screen and (max-width: 360px) {
+  .logo {
+    margin-right: 20px;
+  }
+}
