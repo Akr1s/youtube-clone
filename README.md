@@ -5,3 +5,5 @@
 ## Api [https://www.tvmaze.com/api]
 
 ## Live App (firebase) [https://clone-d7f2d.web.app/]
+
+# The project is gonna be restructured and updated
