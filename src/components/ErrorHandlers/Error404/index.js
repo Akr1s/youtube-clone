@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "../../styles/Error404.module.css";
+import { ErrorContainer, ErrorType } from "./Styles";
 
 function Error404() {
   return (
-    <div className={styles.error_container}>
-      <h1>404</h1>
+    <ErrorContainer direction="column">
+      <ErrorType>404</ErrorType>
       <p>
         Return to <Link to="/">Home</Link>
       </p>
-    </div>
+    </ErrorContainer>
   );
 }
 

@@ -1,16 +1,15 @@
 import React from "react";
-import styles from "../../styles/Boilerplate.module.css";
 import { camelCase } from "../../utils";
+import { BoilerplateContainer, BoilerplateText, ComponentName } from "./Styles";
 
 function Boilerplate({ title }) {
   return (
-    <div className={styles.container}>
-      <h3 className={styles.text}>
-        Component{" "}
-        <span className={styles.componentName}>{camelCase(title)}</span> will be
+    <BoilerplateContainer>
+      <BoilerplateText>
+        Component <ComponentName>{camelCase(title)}</ComponentName> will be
         added soon{" "}
-      </h3>
-    </div>
+      </BoilerplateText>
+    </BoilerplateContainer>
   );
 }
 
