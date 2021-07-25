@@ -7,13 +7,16 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter } from "react-router-dom";
 import ToTop from "./components/ToTop";
+import Theme from "./styles/Theme";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
         <ToTop />
-        <App />
+        <Theme>
+          <App />
+        </Theme>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>,

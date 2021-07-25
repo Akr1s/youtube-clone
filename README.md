@@ -5,14 +5,3 @@
 ## Api [https://www.tvmaze.com/api]
 
 ## Live App (firebase) [https://clone-d7f2d.web.app/]
-
-## TODO
-
-    * mobile adaptivity for pagination
-    * Add sceletons to search SingleResult
-    * add more top search terms to datalist
-    * add mobile search
-    * add themes and more relative units
-    * add login functionality with firebase
-
-P.S. Search actually works
