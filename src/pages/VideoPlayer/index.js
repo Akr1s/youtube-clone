@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import styles from "../../styles/VideoPlayer.module.css";
 import { formatArrayLength } from "../../utils";
 import Video from "../../components/VideoPlayerView/Video";
 import VideoInfo from "../../components/VideoPlayerView/VideoInfo";
@@ -10,6 +9,7 @@ import useFetch from "../../hooks/useFetch";
 import { push } from "../../features/history/historySlice";
 import { useEffect } from "react";
 import useVideoWithParams from "../../hooks/useVideoWithParams";
+import { Container, Left, Right, RightContent, RightTitle } from "./Styles";
 
 function VideoPlayer() {
   const dispatch = useDispatch();
@@ -24,16 +24,12 @@ function VideoPlayer() {
   const { result, error } = useFetch(url);
 
   if (error)
-    return (
-      <div className={styles.videoPlayer}>
-        There is an error. Please, reload the pages
-      </div>
-    );
-  if (!result) return <div className={styles.videoPlayer}>...Loading</div>;
+    return <Container>There is an error. Please, reload the pages</Container>;
+  if (!result) return <Container>...Loading</Container>;
   const formattedResult = formatArrayLength(result);
   return (
-    <div className={styles.videoPlayer}>
-      <div className={styles.left}>
+    <Container>
+      <Left>
         <Video poster={video.image} title={video.name} />
         <VideoInfo
           episode={video.episode}
@@ -42,10 +38,10 @@ function VideoPlayer() {
           date={video.date}
           showId={video.showId}
         />
-      </div>
-      <div className={styles.right}>
-        <div className={styles.rightTitle}>Enother episodes</div>
-        <div className={styles.rightContent}>
+      </Left>
+      <Right>
+        <RightTitle>Enother episodes</RightTitle>
+        <RightContent>
           {formattedResult.map((episode) => (
             <Episode
               key={episode.id}
@@ -54,9 +50,9 @@ function VideoPlayer() {
               episode={episode.episode}
             />
           ))}
-        </div>
-      </div>
-    </div>
+        </RightContent>
+      </Right>
+    </Container>
   );
 }
 

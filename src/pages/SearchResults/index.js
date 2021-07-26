@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import SingleResult from "../../components/Search/SingleResult";
+import { Container, Title } from "./Styles";
 import useFetch from "../../hooks/useFetch";
-import styles from "../../styles/SearchResults.module.css";
 
 function SearchResults() {
   const term = useSelector((state) => state.term);
@@ -14,15 +14,15 @@ function SearchResults() {
   if (result.length === 0) return <div>Sorry, we cant fing anything</div>;
   return (
     <div>
-      <h2 className={styles.searchCounter}>Search results: {result.length}</h2>
-      <div className={styles.results}>
+      <Title>Search results: {result.length}</Title>
+      <Container>
         {result.map((item) => {
           const image =
             item.show.image?.medium || "https://picsum.photos/210/295";
           const name = item.show.name;
           return <SingleResult image={image} name={name} key={item.show.id} />;
         })}
-      </div>
+      </Container>
     </div>
   );
 }

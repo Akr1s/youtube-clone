@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import ChannelEpisodes from "../../components/ChannelView/ChannelEpisodes";
 import ChannelHeader from "../../components/ChannelView/ChannelHeader";
 import useFetch from "../../hooks/useFetch";
-import styles from "../../styles/Channel.module.css";
 
 function Channel() {
   const params = useParams();
@@ -14,7 +13,7 @@ function Channel() {
   if (error) return <h2>There is an error</h2>;
   if (!result) return <h2>Loading...</h2>;
   return (
-    <div className={styles.channel}>
+    <div>
       <ChannelHeader
         image={result.image.medium}
         name={result.name}
