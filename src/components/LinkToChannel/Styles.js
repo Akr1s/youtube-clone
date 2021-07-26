@@ -6,4 +6,6 @@ export const StyledLink = styled(Link)`
   color: black;
   outline: 1px dashed #00a;
   padding: 5px;
+  margin: 10px 0px;
+  display: inline-block;
 `;
