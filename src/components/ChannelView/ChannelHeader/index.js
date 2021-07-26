@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/ChannelHeader.module.css";
 import { CgBell } from "react-icons/cg";
-import SubscribeBtn from "./SubscribeBtn";
+import SubscribeBtn from "../SubscribeBtn";
 
 function ChannelHeader({ image, name, subscribersAmount }) {
   return (

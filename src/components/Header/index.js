@@ -12,7 +12,7 @@ import {
   AiOutlineVideoCamera,
   AiOutlineUser,
 } from "react-icons/ai";
-import SearchForm from "./Search/SearchForm";
+import SearchForm from "../Search/SearchForm";
 import { useEffect } from "react";
 
 function Header() {

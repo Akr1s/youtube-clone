@@ -1,7 +1,7 @@
 import React from "react";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../../../hooks/useFetch";
 import styles from "../../styles/ChannelEpisodes.module.css";
-import Episode from "../VideoPlayerView/Episode";
+import Episode from "../../VideoPlayerView/Episode";
 
 function ChannelEpisodes({ id, name, image }) {
   const url = `https://api.tvmaze.com/shows/${id}/episodes`;
