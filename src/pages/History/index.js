@@ -1,7 +1,16 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { reset } from "../../features/history/historySlice";
-import styles from "../../styles/History.module.css";
+import {
+  ClearButton,
+  Container,
+  Description,
+  Episode,
+  HistoryElement,
+  MainTitle,
+  Poster,
+  VideoTitle,
+} from "./Styles";
 
 function History() {
   const history = useSelector((state) => state.history);
@@ -13,27 +22,25 @@ function History() {
 
   if (history.length === 0)
     return (
-      <div className={styles.history}>
-        <h2>There are no videos yet</h2>
+      <div>
+        <MainTitle>There are no videos yet</MainTitle>
       </div>
     );
   return (
-    <div className={styles.history}>
-      <h2>Recently opened videos</h2>
-      <button onClick={handleClear} className={styles.cleatBtn}>
-        Clear history
-      </button>
-      <div className={styles.container}>
+    <div>
+      <MainTitle>Recently opened videos</MainTitle>
+      <ClearButton onClick={handleClear}>Clear history</ClearButton>
+      <Container>
         {history.map(({ image, name, episode, id }) => (
-          <article className={styles.historyElement} key={id}>
-            <img src={image} alt={name} className={styles.poster} />
-            <div className={styles.description}>
-              <h3 className={styles.videoTitle}>{name}</h3>
-              <p className={styles.episode}>{episode}</p>
-            </div>
-          </article>
+          <HistoryElement key={id}>
+            <Poster src={image} alt={name} />
+            <Description>
+              <VideoTitle>{name}</VideoTitle>
+              <Episode>{episode}</Episode>
+            </Description>
+          </HistoryElement>
         ))}
-      </div>
+      </Container>
     </div>
   );
 }

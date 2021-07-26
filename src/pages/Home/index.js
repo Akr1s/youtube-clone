@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import styles from "../../styles/Home.module.css";
 import PageVideo from "../../components/PageVideo";
 import HomeVideoSceleton from "../../components/Sceletons/HomeVideoSceleton";
 import Pagination from "../../components/HomePagination";
 import PaginationSceleton from "../../components/Sceletons/PaginationSceleton";
 import useVideos from "../../hooks/useVideos";
 import { useSelector } from "react-redux";
+import { Container } from "./Styles";
 
 function Home() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,20 +20,16 @@ function Home() {
   );
 
   if (error)
-    return (
-      <div className={styles.home}>
-        There is an error, try to refresh the page
-      </div>
-    );
+    return <Container>There is an error, try to refresh the page</Container>;
   if (transformedData.length === 0) {
     return (
       <>
         <PaginationSceleton />
-        <div className={styles.home}>
+        <Container>
           {new Array(VIDEOS_PER_PAGE).fill(1).map((item, index) => (
             <HomeVideoSceleton key={index} />
           ))}
-        </div>
+        </Container>
       </>
     );
   }
@@ -46,11 +42,11 @@ function Home() {
         pageSize={VIDEOS_PER_PAGE}
         onPageChange={(page) => setCurrentPage(page)}
       />
-      <div className={styles.home}>
+      <Container>
         {transformedData.map((video) => {
           return <PageVideo {...video} key={video.id} />;
         })}
-      </div>
+      </Container>
     </>
   );
 }
