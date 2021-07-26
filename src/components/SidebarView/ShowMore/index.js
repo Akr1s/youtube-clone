@@ -1,30 +1,27 @@
 import React, { useState } from "react";
-import { AiOutlineUp, AiOutlineDown, AiOutlineMeh } from "react-icons/ai";
 import {
-  icon,
-  showMoreBtn,
-  showMoreLi,
-} from "../../../styles/Sidebar.module.css";
+  AiOutlineDownStyled,
+  AiOutlineMehStyled,
+  AiOutlineUpStyled,
+  Button,
+  ListItem,
+} from "./Styles";
 
 function ShowMore() {
   const [showMore, setShowMore] = useState(false);
   return (
     <>
       {showMore && (
-        <li className={showMoreLi}>
+        <ListItem>
           {" "}
-          <AiOutlineMeh className={icon} />
+          <AiOutlineMehStyled />
           Nothing more
-        </li>
+        </ListItem>
       )}
-      <button className={showMoreBtn} onClick={() => setShowMore(!showMore)}>
-        {showMore ? (
-          <AiOutlineUp className={icon} />
-        ) : (
-          <AiOutlineDown className={icon} />
-        )}{" "}
-        Show {showMore ? "less" : "more"}
-      </button>
+      <Button onClick={() => setShowMore(!showMore)}>
+        {showMore ? <AiOutlineUpStyled /> : <AiOutlineDownStyled />} Show{" "}
+        {showMore ? "less" : "more"}
+      </Button>
     </>
   );
 }

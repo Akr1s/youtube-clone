@@ -1,12 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { StyledLink } from "./Styles";
 
-function LinkToChannel({ channel, linkClass }) {
-  return (
-    <Link to={`/channel:${channel}`} className={linkClass}>
-      Open Channel
-    </Link>
-  );
+function LinkToChannel({ channel }) {
+  return <StyledLink to={`/channel:${channel}`}>Open Channel</StyledLink>;
 }
 
 export default LinkToChannel;

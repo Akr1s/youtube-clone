@@ -1,22 +1,21 @@
 import React from "react";
-import styles from "../../../styles/Sidebar.module.css";
-import { NavLink } from "react-router-dom";
 import pseudoTabs from "../../../data/pseudoTabs";
 import ShowMore from "../ShowMore";
+import { StyledNavLink, Tabs, TabsLi } from "./Styles";
 
 function PseudoTabs() {
   return (
-    <ul className={styles.tabs}>
+    <Tabs>
       {pseudoTabs.map(({ to, exact, text, icon }) => (
-        <li key={text}>
-          <NavLink to={to} exact={exact} activeClassName={styles.activeLink}>
+        <TabsLi key={text}>
+          <StyledNavLink to={to} exact={exact} activeClassName="activeLink">
             {" "}
             {icon} {text}
-          </NavLink>
-        </li>
+          </StyledNavLink>
+        </TabsLi>
       ))}
       <ShowMore />
-    </ul>
+    </Tabs>
   );
 }
 

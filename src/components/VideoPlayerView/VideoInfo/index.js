@@ -17,7 +17,7 @@ function VideoInfo({ episode, title, summary, date, showId }) {
         </div>
       </div>
       <div className={styles.mainInfo}>
-        <LinkToChannel channel={showId} linkClass={styles.linkToChannel} />
+        <LinkToChannel channel={showId} />
         <h3>{title}</h3>
         <p className={styles.premiered}>{date}</p>
         <p

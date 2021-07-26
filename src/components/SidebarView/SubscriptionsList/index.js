@@ -1,19 +1,19 @@
 import React from "react";
 import Subscription from "../Subscription";
-import styles from "../../../styles/Sidebar.module.css";
 import subList from "../../../data/subList";
+import { Subscriptions, SubscriptionsTitle } from "./Styles";
 
 function SubscriptionsList() {
   return (
     <>
-      <p className={styles.subTitle}>Subscriptions</p>
-      <ul className={styles.subscriptions}>
+      <SubscriptionsTitle>Subscriptions</SubscriptionsTitle>
+      <Subscriptions>
         {subList.map(({ fullName, image }, index) => (
           <li key={index}>
             <Subscription fullName={fullName} image={image} />
           </li>
         ))}
-      </ul>
+      </Subscriptions>
     </>
   );
 }

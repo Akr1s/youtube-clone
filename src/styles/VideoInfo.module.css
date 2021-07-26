@@ -29,12 +29,6 @@
   border: none;
   font-size: 18px;
 }
-.linkToChannel {
-  text-decoration: none;
-  color: black;
-  outline: 1px dashed #00a;
-  padding: 5px;
-}
 
 @media screen and (max-width: 500px) {
   .additionalInfo {
