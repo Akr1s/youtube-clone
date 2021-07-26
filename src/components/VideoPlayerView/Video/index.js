@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../../styles/Video.module.css";
-import playBtn from "../../images/play-button.png";
+import styles from "../../../styles/Video.module.css";
+import playBtn from "../../../images/play-button.png";
 
 function Video({ poster, title }) {
   return (

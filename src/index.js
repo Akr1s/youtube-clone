@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter } from "react-router-dom";
-import ToTop from "./components/ToTop";
+import ToTop from "./components/GlobalComponents/ToTop";
 import Theme from "./styles/Theme";
 
 ReactDOM.render(

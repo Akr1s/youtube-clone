@@ -1,7 +1,8 @@
 import React from "react";
+import { Button } from "./Styles";
 
-function SubscribeBtn({ impClass }) {
-  return <button className={impClass}>Subscribe</button>;
+function SubscribeBtn() {
+  return <Button>Subscribe</Button>;
 }
 
 export default SubscribeBtn;

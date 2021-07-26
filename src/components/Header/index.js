@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "../styles/Header.module.css";
+import styles from "../../styles/Header.module.css";
 import {
   activeSidebar,
   sidebarActiveAbsolute,
-} from "../styles/Sidebar.module.css";
-import logo from "../images/logo-black.png";
+} from "../../styles/Sidebar.module.css";
+import logo from "../../images/logo-black.png";
 import { Link, useLocation, useRouteMatch } from "react-router-dom";
 import {
   AiOutlineBell,

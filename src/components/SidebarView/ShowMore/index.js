@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { AiOutlineUp, AiOutlineDown, AiOutlineMeh } from "react-icons/ai";
-import { icon, showMoreBtn, showMoreLi } from "../../styles/Sidebar.module.css";
+import {
+  icon,
+  showMoreBtn,
+  showMoreLi,
+} from "../../../styles/Sidebar.module.css";
 
 function ShowMore() {
   const [showMore, setShowMore] = useState(false);

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/VideoInfo.module.css";
+import styles from "../../../styles/VideoInfo.module.css";
 import LinkToChannel from "../../LinkToChannel";
 
 function VideoInfo({ episode, title, summary, date, showId }) {

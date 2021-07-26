@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/Sidebar.module.css";
+import styles from "../../styles/Sidebar.module.css";
 import { Link, useRouteMatch } from "react-router-dom";
 import { AiOutlineSetting } from "react-icons/ai";
 import PseudoTabs from "../SidebarView/PseudoTabs";

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/PageVideo.module.css";
+import styles from "../../styles/PageVideo.module.css";
 import { Link } from "react-router-dom";
 
 function PageVideo({ name, image, episode, id }) {

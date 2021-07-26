@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/Sidebar.module.css";
+import styles from "../../../styles/Sidebar.module.css";
 import { NavLink } from "react-router-dom";
 import pseudoTabs from "../../../data/pseudoTabs";
 import ShowMore from "../ShowMore";

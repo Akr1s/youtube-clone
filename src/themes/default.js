@@ -6,6 +6,7 @@ const theme = {
   colors: {
     background: "#F2F2F2",
     activeClass: "#FF0000",
+    subscribe: "#FF0000",
     titleText: "#19202C",
     regularText: "#898989",
     icon: "#a69b9b",

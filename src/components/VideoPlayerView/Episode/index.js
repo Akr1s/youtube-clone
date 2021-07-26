@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/Episode.module.css";
+import styles from "../../../styles/Episode.module.css";
 
 function Episode({ name, image, episode }) {
   return (
