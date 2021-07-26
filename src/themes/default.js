@@ -14,6 +14,12 @@ const theme = {
     error404Bg: "#2d72d9",
     error404Text: "#fff",
   },
+  breakpoints: {
+    sm: "screen and (max-width: 360px)",
+    md: "screen and (max-width: 600px)",
+    lg: "screen and (max-width: 1024px)",
+    xl: "screen and (max-width: 1500px)",
+  },
 };
 
 export default theme;

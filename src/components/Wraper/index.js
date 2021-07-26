@@ -1,15 +1,16 @@
 import React from "react";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
+import { Container, Content } from "./Styles";
 
 function Wraper({ children }) {
   return (
     <>
       <Header />
-      <main className="container">
+      <Container>
         <Sidebar />
-        <section className="content">{children}</section>
-      </main>
+        <Content>{children}</Content>
+      </Container>
     </>
   );
 }

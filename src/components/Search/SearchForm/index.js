@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styles from "../../styles/SearchForm.module.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { setTerm } from "../../features/term/termSlice";
+import { setTerm } from "../../../features/term/termSlice";
 import { useHistory } from "react-router-dom";
+import { Form, SearchButton, SearchInput } from "./Styles";
 
 function SearchForm() {
   const [searhValue, setSearhValue] = useState("");
@@ -16,10 +16,9 @@ function SearchForm() {
     history.push("/searchResult");
   };
   return (
-    <form className={styles.search_form} onSubmit={handleSearch}>
-      <input
+    <Form onSubmit={handleSearch}>
+      <SearchInput
         type="text"
-        className={styles.search_input}
         placeholder="Search..."
         list="top-search-list"
         value={searhValue}
@@ -35,15 +34,10 @@ function SearchForm() {
         <option value="magic" />
         <option value="cats" />
       </datalist>
-      <button
-        className={styles.seach_icon}
-        onClick={handleSearch}
-        disabled={!searhValue}
-        type="submit"
-      >
+      <SearchButton onClick={handleSearch} disabled={!searhValue} type="submit">
         <AiOutlineSearch />
-      </button>
-    </form>
+      </SearchButton>
+    </Form>
   );
 }
 
