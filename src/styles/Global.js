@@ -32,7 +32,19 @@ const GlobalStyles = createGlobalStyle`
   .icon{
     margin-right: 5px;
   }
+
+  .paginationItemSelected {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
   
+  .paginationItemDisabled {
+    pointer-events: none;
+  }
+  
+  .paginationItemDisabled:hover {
+    background-color: transparent;
+    cursor: default;
+  }
 `;
 
 function Global() {

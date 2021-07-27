@@ -1,7 +1,13 @@
 import React from "react";
 import { usePagination, DOTS } from "../../hooks/usePagination";
-import styles from "../../styles/HomePagination.module.css";
 import { v4 as uuidv4 } from "uuid";
+import {
+  ArrowLeft,
+  ArrowRight,
+  PaginationContainer,
+  PaginationItem,
+  PaginationItemDots,
+} from "./Styles";
 
 const Pagination = (props) => {
   const {
@@ -33,45 +39,41 @@ const Pagination = (props) => {
 
   let lastPage = paginationRange[paginationRange.length - 1];
   return (
-    <ul className={`${styles.paginatioContainer} ${styles.paginationBar}`}>
-      <li
-        className={`${styles.paginationItem} ${
-          currentPage === 1 ? styles.paginationItemDisabled : ""
-        }`}
+    <PaginationContainer>
+      <PaginationItem
+        className={`${currentPage === 1 ? "paginationItemDisabled" : ""}`}
         onClick={onPrevious}
       >
-        <div className={styles.arrowLeft} />
-      </li>
+        <ArrowLeft />
+      </PaginationItem>
       {paginationRange.map((pageNumber) => {
         if (pageNumber === DOTS) {
           return (
-            <li key={uuidv4()} className={styles.paginationItemDots}>
-              &#8230;
-            </li>
+            <PaginationItemDots key={uuidv4()}>&#8230;</PaginationItemDots>
           );
         }
 
         return (
-          <li
+          <PaginationItem
             key={uuidv4()}
-            className={`${styles.paginationItem} ${
-              pageNumber === currentPage ? styles.paginationItemSelected : ""
+            className={`${
+              pageNumber === currentPage ? "paginationItemSelected" : ""
             }`}
             onClick={() => onPageChange(pageNumber)}
           >
             {pageNumber}
-          </li>
+          </PaginationItem>
         );
       })}
-      <li
-        className={`${styles.paginationItem} ${
-          currentPage === lastPage ? styles.paginationItemDisabled : ""
+      <PaginationItem
+        className={`${
+          currentPage === lastPage ? "paginationItemDisabled" : ""
         }`}
         onClick={onNext}
       >
-        <div className={styles.arrowRight} />
-      </li>
-    </ul>
+        <ArrowRight />
+      </PaginationItem>
+    </PaginationContainer>
   );
 };
 
