@@ -6,4 +6,6 @@
 
 ## Live App (firebase) [https://clone-d7f2d.web.app/]
 
-# The project is gonna be restructured and updated
+## To-Do:
+
+- look for bugs after merge
