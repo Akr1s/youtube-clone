@@ -21,9 +21,16 @@ const GlobalStyles = createGlobalStyle`
       monospace;
   }
 
+  ul{
+    list-style-type: none;
+  }
+
   a.activeLink {
     color: red;
     font-weight: 700;
+  }
+  .icon{
+    margin-right: 5px;
   }
   
 `;
