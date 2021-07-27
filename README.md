@@ -9,3 +9,5 @@
 ## To-Do:
 
 - look for bugs after merge
+
+- fix sidebar inside VideoPlayer
