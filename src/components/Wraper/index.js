@@ -15,7 +15,7 @@ function Wraper({ children }) {
       <Header toggleSidebar={toggleSidebar} />
       <Container>
         <Sidebar showSidebar={showSidebar} />
-        <Content>{children}</Content>
+        <Content showSidebar={showSidebar}>{children}</Content>
       </Container>
     </>
   );
