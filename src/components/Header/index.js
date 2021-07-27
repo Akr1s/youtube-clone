@@ -14,11 +14,11 @@ import {
   Right,
 } from "./Styles";
 
-function Header() {
+function Header({ toggleSidebar }) {
   return (
     <HeaderContainer>
       <Left>
-        <Hamburger />
+        <Hamburger toggleSidebar={toggleSidebar} />
         <Link to="/">
           <Logo src={logo} alt="Page" />
         </Link>

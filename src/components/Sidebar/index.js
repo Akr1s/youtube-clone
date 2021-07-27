@@ -4,9 +4,9 @@ import SettingBtn from "../SidebarView/SettingBtn";
 import SubscriptionsList from "../SidebarView/SubscriptionsList";
 import { SidebarContainer } from "./Styles";
 
-function Sidebar() {
+function Sidebar({ showSidebar }) {
   return (
-    <SidebarContainer id="sidebar">
+    <SidebarContainer id="sidebar" showSidebar={showSidebar}>
       <nav>
         <PseudoTabs />
       </nav>
