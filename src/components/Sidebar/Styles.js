@@ -10,12 +10,32 @@ export const SidebarContainer = styled.aside`
 
   ${(p) =>
     p.showSidebar &&
+    !p.isVideoPlayer &&
     css`
       flex-basis: 235px;
       padding: 30px;
       padding-right: 0px;
     `}
+  ${(p) =>
+    p.isVideoPlayer &&
+    css`
+      position: absolute;
+      background-color: #fff;
+      padding: 30px;
+      left: -245px;
+      border: 1px solid #afafaf;
+      border-left: none;
+      border-radius: 5px;
+      min-height: 877px;
+      flex-basis: 235px;
+    `}
 
+    ${(p) =>
+    p.showSidebar &&
+    p.isVideoPlayer &&
+    css`
+      left: 0;
+    `}
   @media screen and (max-width: 1000px) {
     position: absolute;
     background-color: #fff;
